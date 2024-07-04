@@ -1,9 +1,8 @@
 package main
 
 import (
-	"github.com/1stguardleft/discipline_gbackend/pkg/logging"
-	"github.com/1stguardleft/discipline_gbackend/pkg/setting"
-	"github.com/1stguardleft/discipline_gbackend/routers"
+	"github.com/1stguardleft/discipline-gbackend/pkg/logging"
+	"github.com/1stguardleft/discipline-gbackend/pkg/setting"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,6 +14,5 @@ func init() {
 func main() {
 	gin.SetMode(setting.ServerSetting.RunMode)
 
-	routersInit := routers.InitRouter()
-
+	//routersInit := routers.InitRouter()
 }
