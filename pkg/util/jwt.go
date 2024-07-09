@@ -22,13 +22,13 @@ func GenerateToken(username, password string) (string, error) {
 		EncodeMD5(username),
 		EncodeMD5(password),
 		jwt.StandardClaims{
-			ExpireAt: expireTime.Unix(),
-			Issuer:   "lstguardleft",
+			ExpiresAt: expireTime.Unix(),
+			Issuer:    "lstguardleft",
 		},
 	}
 
 	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	token, err := tokenClaims.SignedSTring(jwtSecret)
+	token, err := tokenClaims.SignedString(jwtSecret)
 
 	return token, err
 }

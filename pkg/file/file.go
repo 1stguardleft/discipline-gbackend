@@ -8,7 +8,7 @@ import (
 	"path"
 )
 
-func getSize(f multipart.File) (int, error) {
+func GetSize(f multipart.File) (int, error) {
 	content, err := io.ReadAll(f)
 
 	return len(content), err

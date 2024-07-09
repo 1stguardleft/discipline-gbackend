@@ -14,7 +14,7 @@ func Setup() error {
 	RedisConn = &redis.Pool{
 		MaxIdle:     setting.RedisSetting.MaxIdle,
 		MaxActive:   setting.RedisSetting.MaxActive,
-		IdleTImeout: setting.RedisSetting.IdleTimeout,
+		IdleTimeout: setting.RedisSetting.IdleTimeout,
 		Dial: func() (redis.Conn, error) {
 			c, err := redis.Dial("tcp", setting.RedisSetting.Host)
 			if err != nil {
@@ -71,7 +71,6 @@ func Exists(key string) bool {
 	return exists
 }
 
-// Get get a key
 func Get(key string) ([]byte, error) {
 	conn := RedisConn.Get()
 	defer conn.Close()
@@ -84,7 +83,6 @@ func Get(key string) ([]byte, error) {
 	return reply, nil
 }
 
-// Delete delete a kye
 func Delete(key string) (bool, error) {
 	conn := RedisConn.Get()
 	defer conn.Close()
@@ -92,7 +90,6 @@ func Delete(key string) (bool, error) {
 	return redis.Bool(conn.Do("DEL", key))
 }
 
-// LikeDeletes batch delete
 func LikeDeletes(key string) error {
 	conn := RedisConn.Get()
 	defer conn.Close()

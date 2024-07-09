@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-var db *gorm.db
+var db *gorm.DB
 
 type Model struct {
 	ID         int `gorm:"primary_key" json:"id"`
@@ -51,7 +51,7 @@ func Setup() {
 }
 
 func CloseDB() {
-	defer db.close()
+	defer db.Close()
 }
 
 func updateTimeStampForCreateCallback(scope *gorm.Scope) {

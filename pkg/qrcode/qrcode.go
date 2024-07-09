@@ -1,4 +1,4 @@
-package qrcod
+package qrcode
 
 import (
 	"image/jpeg"
