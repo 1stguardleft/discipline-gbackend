@@ -23,6 +23,13 @@ func InitRouter() *gin.Engine {
 
 	engine.POST("/auth", api.GetAuth)
 	// engine.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-
+	/*
+		apiv1 := engine.Group("/api/v1")
+			apiv1.Use(jwt.JWT())
+			{
+				apiv1.GET("/articles", v1.GetArticles)
+				apiv1.GET("/articles/:id", v1.GetArticleß)
+			}
+	*/
 	return engine
 }

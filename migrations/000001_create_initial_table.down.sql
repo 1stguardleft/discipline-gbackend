@@ -1,1 +1,1 @@
-select 1
+DROP TABLE IF EXISTS `dscp_auth`;
